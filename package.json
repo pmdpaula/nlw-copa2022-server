@@ -1,0 +1,45 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx src/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --ext .tsx --ext .ts src/ ",
+    "prepare": "husky install",
+    "format": "prettier --check ./src",
+    "commit": "cz"
+  },
+  "author": "Pedro Machado de Paula",
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "^17.2.0",
+    "@commitlint/config-conventional": "^17.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
+    "commitizen": "^4.2.5",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.26.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "pinst": "^3.0.0",
+    "prettier": "2.7.1",
+    "tsx": "^3.11.0",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {},
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
