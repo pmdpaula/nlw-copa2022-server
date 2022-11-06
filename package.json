@@ -4,18 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx src/server.ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx watch src/server.ts",
     "lint": "eslint --ext .tsx --ext .ts src/ ",
     "prepare": "husky install",
     "format": "prettier --check ./src",
-    "commit": "cz"
+    "commit": "cz",
+    "studio": "npx prisma studio"
   },
   "author": "Pedro Machado de Paula",
   "license": "ISC",
   "devDependencies": {
     "@commitlint/cli": "^17.2.0",
     "@commitlint/config-conventional": "^17.2.0",
+    "@mermaid-js/mermaid-cli": "^9.1.7",
     "@typescript-eslint/eslint-plugin": "^5.42.0",
     "@typescript-eslint/parser": "^5.42.0",
     "commitizen": "^4.2.5",
@@ -30,10 +31,18 @@
     "lint-staged": "^13.0.3",
     "pinst": "^3.0.0",
     "prettier": "2.7.1",
+    "prisma": "^4.5.0",
+    "prisma-erd-generator": "^1.2.2",
     "tsx": "^3.11.0",
     "typescript": "^4.8.4"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@fastify/cors": "^8.1.1",
+    "@prisma/client": "^4.5.0",
+    "fastify": "^4.9.2",
+    "short-unique-id": "^4.4.4",
+    "zod": "^3.19.1"
+  },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
   },
@@ -41,5 +50,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
   }
 }

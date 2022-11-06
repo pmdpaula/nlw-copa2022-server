@@ -13,3 +13,7 @@ web-build/
 # macOS
 .DS_Store
 tmp/
+
+.env
+.env.local
+.env.production
