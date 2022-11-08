@@ -56,7 +56,7 @@ npx prisma init --datasource-provider  SQLite
 
 ### Modelagem de dados
 
-- Tabela Pool
+- Tabela Poll
   Após criar o model no schema.prisma executar a migração para criar os obejtos do banco de dados e fazer o versionamento do banco.
 
 ```
@@ -117,7 +117,7 @@ npx prisma generate
 npx prisma db seed
 ```
 
-## Outros pacootes
+## Outros pacotes
 
 ### Validação do esquema com o pacote `zod`
 
@@ -130,3 +130,26 @@ yarn add zod
 ```
 yarn add short-unique-id
 ```
+
+### Token JWT
+
+[@fastify/jwt](https://github.com/fastify/fastify-jwt)
+
+```
+yarn add @fastify/jwt
+```
+
+### Environment variables from .env files
+
+[dotenv](https://github.com/motdotla/dotenv)
+
+```
+yarn add dotenv
+```
+
+Uso:
+
+    ```
+    import * as dotenv from 'dotenv';
+    dotenv.config();
+    ```
