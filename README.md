@@ -153,3 +153,21 @@ Uso:
     import * as dotenv from 'dotenv';
     dotenv.config();
     ```
+
+## Erros
+
+### Erro: `fetch is not defined`
+
+```
+const userResponse = await fetch('https://www.googleapis.com/oauth2/v2/userinfo', {
+                           ^
+
+                           ReferenceError: fetch is not defined
+```
+
+**_Correção_**:
+Instalação do pacote `node-fetch`
+
+```
+yarn add node-fetch
+```

@@ -18,22 +18,28 @@ async function bootstrap() {
     logger: true,
   });
 
-  await fastify.register(cors, {
-    origin: true,
-  });
+  try {
+    await fastify.register(cors, {
+      origin: true,
+    });
 
-  await fastify.register(jwt, {
-    secret: process.env.JWT_SECRET || '',
-  });
+    await fastify.register(jwt, {
+      secret: process.env.JWT_SECRET || '',
+    });
 
-  await fastify.register(authRoutes);
-  await fastify.register(gameRoutes);
-  await fastify.register(guessRoutes);
-  await fastify.register(pollRoutes);
-  await fastify.register(userRoutes);
+    await fastify.register(authRoutes);
+    await fastify.register(gameRoutes);
+    await fastify.register(guessRoutes);
+    await fastify.register(pollRoutes);
+    await fastify.register(userRoutes);
 
-  // A configuração do host aqui é para funcionar corretamente com o Android
-  await fastify.listen({ port: 3333, host: '0.0.0.0' });
+    // A configuração do host aqui é para funcionar corretamente com o Android
+    await fastify.listen({ port: 3333, host: '0.0.0.0' });
+  } catch (err) {
+    fastify.log.error(err);
+
+    process.exit(1);
+  }
 }
 
 bootstrap();

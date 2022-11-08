@@ -5,7 +5,6 @@ module.exports = {
     commonjs: true,
   },
   extends: [
-    'plugin:react/recommended',
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier',

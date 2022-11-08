@@ -1,4 +1,5 @@
 import { FastifyInstance } from 'fastify';
+import fetch from 'node-fetch';
 import z from 'zod';
 
 import { prisma } from '../lib/prisma';

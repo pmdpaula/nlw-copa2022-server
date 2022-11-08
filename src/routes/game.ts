@@ -35,7 +35,8 @@ export const gameRoutes = async (fastify: FastifyInstance) => {
       });
 
       return {
-        games: games.map((game) => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        games: games.map((game: { guesses: string | any[] }) => {
           return {
             ...game,
             guess: game.guesses.length > 0 ? game.guesses[0] : null,
