@@ -14,7 +14,7 @@ export const pollRoutes = async (fastify: FastifyInstance) => {
   });
 
   // Join a poll
-  fastify.post('/polls', async (request, reply) => {
+  fastify.post('/polls', async (request) => {
     const createPollBody = z.object({
       title: z.string(),
     });
@@ -50,7 +50,8 @@ export const pollRoutes = async (fastify: FastifyInstance) => {
       });
     }
 
-    return reply.status(201).send({ code });
+    return { code };
+    // return reply.status(201).send({ code });
   });
 
   fastify.post(
@@ -140,7 +141,7 @@ export const pollRoutes = async (fastify: FastifyInstance) => {
             select: {
               id: true,
 
-              User: {
+              user: {
                 select: {
                   avatarUrl: true,
                 },
@@ -188,7 +189,7 @@ export const pollRoutes = async (fastify: FastifyInstance) => {
             select: {
               id: true,
 
-              User: {
+              user: {
                 select: {
                   avatarUrl: true,
                 },
