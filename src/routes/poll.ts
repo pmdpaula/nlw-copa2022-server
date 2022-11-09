@@ -82,7 +82,7 @@ export const pollRoutes = async (fastify: FastifyInstance) => {
 
       // if poll doesn't exist
       if (!poll) {
-        return reply.status(404).send({ message: 'Poll not found' });
+        return reply.status(404).send({ message: 'Poll not found.' });
       }
 
       // if user is already in the poll
